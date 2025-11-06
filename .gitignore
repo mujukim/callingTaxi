@@ -39,3 +39,16 @@
 
 # debug information files
 *.dwo
+
+*.opendb
+*.ipch
+*.inch
+*.db-shm
+*.db-wal
+*.db
+*.suo
+*.tlog
+*.idb
+*.log
+*.recipe
+
