@@ -19,22 +19,19 @@ extern int pickup(int mSX, int mSY, int mEX, int mEY);
 extern Result reset(int mNo);
 extern void getBest(int mNos[]);
 
-#define MAX_N 500
-#define MAX_M 5
-#define MAX_K 4000
+#define MAX_M 2000
 #define CMD_INIT 100
-#define CMD_ADD 200
-#define CMD_REMOVE 300
-#define CMD_COST 400
+#define CMD_PICKUP 200
+#define CMD_RESET 300
+#define CMD_GET_BEST 400
 
 static bool run() {
 	int q;
 	scanf("%d", &q);
 
-	int n, m, k, b;
-	int mChargeArr[MAX_N], mIdArr[MAX_K], sCityArr[MAX_K], eCityArr[MAX_K], mTimeArr[MAX_K], mPowerArr[MAX_K];
-	int mCityArr[MAX_M];
-	int mId, sCity, eCity, mTime, mPower;
+	int N, M, L;
+	int mXs[MAX_N], mYs[MAX_K];
+	int mSX, mSY, mEX, mTime, mEY;
 	int cmd, ans, ret = 0;
 	bool okay = false;
 
@@ -43,8 +40,8 @@ static bool run() {
 		switch (cmd) {
 		case CMD_INIT:
 			okay = true;
-			scanf("%d %d", &n, &k);
-			for (int j = 0; j < n; ++j) {
+			scanf("%d %d %d", &N, &M, &L);
+			for (int j = 0; j < N; ++j) {
 				scanf("%d", &mChargeArr[j]);
 			}
 			for (int j = 0; j < k; ++j) {
